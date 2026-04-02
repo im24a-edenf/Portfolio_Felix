@@ -19,9 +19,11 @@ export interface ContentSection {
 }
 
 // New Types for Bento Grid Layout
+export type ProficiencyLevel = 'Expert' | 'Proficient' | 'Familiar';
+
 export interface TechSkill {
   name: string;
-  level?: number; // If present, render progress bar. If not, render tag.
+  proficiency?: ProficiencyLevel;
   isTag?: boolean;
 }
 

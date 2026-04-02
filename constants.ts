@@ -1,4 +1,4 @@
-import { NavItem, Project, SkillData } from './types';
+import { NavItem, Project, SkillData, ProficiencyLevel } from './types';
 
 export const PERSONAL_INFO = {
   name: "Felix Eden",
@@ -36,11 +36,11 @@ export const SKILL_DATA: SkillData = {
     title: 'Frontend Development',
     type: 'technical',
     skills: [
-      { name: 'HTML5', level: 95 },
-      { name: 'CSS3', level: 95 },
-      { name: 'JavaScript (ES6+)', level: 90 },
-      { name: 'React', level: 90 },
-      { name: 'Next.js', level: 85 }
+      { name: 'HTML5', proficiency: 'Proficient' as ProficiencyLevel },
+      { name: 'CSS3', proficiency: 'Proficient' as ProficiencyLevel },
+      { name: 'React', proficiency: 'Proficient' as ProficiencyLevel },
+      { name: 'JavaScript (ES6+)', proficiency: 'Familiar' as ProficiencyLevel },
+      { name: 'Next.js', proficiency: 'Familiar' as ProficiencyLevel }
     ]
   },
   backend: {
@@ -48,9 +48,9 @@ export const SKILL_DATA: SkillData = {
     title: 'Backend Development',
     type: 'technical',
     skills: [
-      { name: 'Node.js', level: 88 },
-      { name: 'Python', level: 82 },
-      { name: 'REST APIs', level: 90 }
+      { name: 'Python', proficiency: 'Expert' as ProficiencyLevel },
+      { name: 'Java', proficiency: 'Familiar' as ProficiencyLevel },
+      { name: 'Node.js', proficiency: 'Familiar' as ProficiencyLevel }
     ]
   },
   database: {
@@ -58,8 +58,8 @@ export const SKILL_DATA: SkillData = {
     title: 'Database & Data',
     type: 'technical',
     skills: [
-      { name: 'SQL', level: 85 },
-      { name: 'Data Modelling', level: 82 }
+      { name: 'SQL', proficiency: 'Expert' as ProficiencyLevel },
+      { name: 'Data Modelling', proficiency: 'Expert' as ProficiencyLevel }
     ]
   },
   tools: {
@@ -67,11 +67,11 @@ export const SKILL_DATA: SkillData = {
     title: 'Tools & Methoden',
     type: 'technical',
     skills: [
-      { name: 'Git / GitHub', level: 90 },
-      { name: 'Responsive Design', level: 92 },
-      { name: 'Server-Side Rendering', level: 85 },
-      { name: 'VS Code', isTag: true },
-      { name: 'Scrum (Basics)', isTag: true }
+      { name: 'Scrum', proficiency: 'Proficient' as ProficiencyLevel },
+      { name: 'Responsive Design', proficiency: 'Proficient' as ProficiencyLevel },
+      { name: 'AI-Assisted Coding', proficiency: 'Proficient' as ProficiencyLevel },
+      { name: 'JetBrains Tools', isTag: true },
+      { name: 'Git / GitHub', isTag: true }
     ]
   },
   soft: {
@@ -79,12 +79,12 @@ export const SKILL_DATA: SkillData = {
     title: 'Mindset & Soft Skills',
     type: 'soft',
     skills: [
-      'Punctual',
-      'Structured',
-      'Problem-solver',
-      'Analytical',
-      'Communicative',
-      'Team-oriented'
+      'Pünktlich',
+      'Strukturiert',
+      'Problemlöser',
+      'Analytisch',
+      'Kommunikativ',
+      'Teamorientiert'
     ]
   }
 };

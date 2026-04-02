@@ -1,6 +1,7 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
 import { Github, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Projects: React.FC = () => {
   return (
@@ -16,12 +17,16 @@ const Projects: React.FC = () => {
 
       <div className="grid md:grid-cols-2 gap-8">
         {PROJECTS.map((project, index) => (
-          <div 
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.15 }}
             className="group relative bg-navy-light/20 backdrop-blur-md rounded-2xl p-8 border border-white/5 hover:border-maroon/40 hover:-translate-y-2 transition-all duration-300"
           >
             <div className="absolute top-8 right-8 text-maroon opacity-50">
-               {project.status === 'Completed' ? <ExternalLink size={24} /> : <div className="text-xs border border-maroon px-2 py-1 rounded">WIP</div>}
+              {project.status === 'Completed' ? <ExternalLink size={24} /> : <div className="text-xs border border-maroon px-2 py-1 rounded">WIP</div>}
             </div>
 
             <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-maroon-glow transition-colors">{project.title}</h4>
@@ -37,16 +42,15 @@ const Projects: React.FC = () => {
               ))}
             </div>
 
-            <a 
-              href={project.link} 
-              className={`flex items-center gap-2 text-sm font-semibold transition-colors ${
-                project.status === 'Completed' ? 'text-white hover:text-maroon' : 'text-gray-500 cursor-not-allowed'
-              }`}
+            <a
+              href={project.link}
+              className={`flex items-center gap-2 text-sm font-semibold transition-colors ${project.status === 'Completed' ? 'text-white hover:text-maroon' : 'text-gray-500 cursor-not-allowed'
+                }`}
             >
               {project.status === 'Completed' && <Github size={16} />}
               {project.linkText}
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

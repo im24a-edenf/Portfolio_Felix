@@ -5,9 +5,9 @@ import { GraduationCap, Code2, Users } from 'lucide-react';
 const About: React.FC = () => {
   return (
     <section id="about" className="relative py-24 px-6 max-w-7xl mx-auto z-10">
-      
+
       {/* Section Header */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -24,9 +24,9 @@ const About: React.FC = () => {
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
+
         {/* Left Column: Main Text (Takes up ~66% width on large screens) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -48,9 +48,9 @@ const About: React.FC = () => {
 
         {/* Right Column: Feature Cards Stack (Takes up ~33% width) */}
         <div className="lg:col-span-1 flex flex-col gap-4">
-          
+
           {/* Card 1: Ausbildung */}
-          <HighlightCard 
+          <HighlightCard
             icon={<GraduationCap size={28} />}
             title="Ausbildung"
             delay={0.1}
@@ -62,7 +62,7 @@ const About: React.FC = () => {
           </HighlightCard>
 
           {/* Card 2: Fokus */}
-          <HighlightCard 
+          <HighlightCard
             icon={<Code2 size={28} />}
             title="Fokus"
             delay={0.2}
@@ -74,7 +74,7 @@ const About: React.FC = () => {
           </HighlightCard>
 
           {/* Card 3: Team-Player */}
-          <HighlightCard 
+          <HighlightCard
             icon={<Users size={28} />}
             title="Team-Player"
             delay={0.3}
@@ -92,14 +92,14 @@ const About: React.FC = () => {
 };
 
 // Reusable Highlight Card Component
-const HighlightCard: React.FC<{ 
-  icon: React.ReactNode; 
-  title: string; 
+const HighlightCard: React.FC<{
+  icon: React.ReactNode;
+  title: string;
   children: React.ReactNode;
   delay: number;
 }> = ({ icon, title, children, delay }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: 30 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
