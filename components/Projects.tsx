@@ -20,7 +20,7 @@ const techIcons: Record<string, React.ReactNode> = {
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="relative py-24 px-6 max-w-7xl 2xl:max-w-[1600px] min-[1920px]:max-w-[1800px] mx-auto z-10">
+    <section id="projects" className="relative py-24 px-6 max-w-7xl mx-auto z-10">
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-4">
           <div className="h-px bg-maroon w-12"></div>
@@ -44,15 +44,15 @@ const Projects: React.FC = () => {
               {project.status === 'Completed' ? <ExternalLink size={24} /> : <div className="text-xs border border-maroon px-2 py-1 rounded">WIP</div>}
             </div>
 
-            <h4 className="text-2xl min-[1920px]:text-[32px] font-bold text-white mb-4 group-hover:text-maroon-glow transition-colors">{project.title}</h4>
-            <p className="text-gray-400 mb-6 leading-relaxed min-h-[80px] min-[1920px]:text-[20px] min-[1920px]:mb-10">
+            <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-maroon-glow transition-colors">{project.title}</h4>
+            <p className="text-gray-400 mb-6 leading-relaxed min-h-[80px]">
               {project.description}
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
               {project.techStack.map(tech => (
-                <span key={tech} className="flex items-center gap-1.5 min-[1920px]:gap-3 text-xs min-[1920px]:text-lg font-mono text-gray-300 bg-navy-dark px-2 min-[1920px]:px-4 py-1 min-[1920px]:py-2 rounded min-[1920px]:rounded-md">
-                  {techIcons[tech] && <span className="text-[12px] min-[1920px]:text-xl leading-none flex items-center justify-center">{techIcons[tech]}</span>}
+                <span key={tech} className="flex items-center gap-1.5 text-xs font-mono text-gray-300 bg-navy-dark px-2 py-1 rounded">
+                  {techIcons[tech] && <span className="text-[12px] leading-none flex items-center justify-center">{techIcons[tech]}</span>}
                   {tech}
                 </span>
               ))}
@@ -63,9 +63,9 @@ const Projects: React.FC = () => {
                 href={project.link}
                 target={project.link ? '_blank' : undefined}
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2 text-sm min-[1920px]:text-xl font-semibold transition-colors ${project.link ? 'text-white hover:text-maroon' : 'text-gray-500 cursor-not-allowed pointer-events-none'}`}
+                className={`flex items-center gap-2 text-sm font-semibold transition-colors ${project.link ? 'text-white hover:text-maroon' : 'text-gray-500 cursor-not-allowed pointer-events-none'}`}
               >
-                {project.link && <Github size={16} className="min-[1920px]:w-6 min-[1920px]:h-6" />}
+                {project.link && <Github size={16} className="" />}
                 {project.linkText}
               </a>
               {project.secondaryLink && (
@@ -73,9 +73,9 @@ const Projects: React.FC = () => {
                   href={project.secondaryLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm min-[1920px]:text-xl font-semibold text-white hover:text-maroon transition-colors"
+                  className="flex items-center gap-2 text-sm font-semibold text-white hover:text-maroon transition-colors"
                 >
-                  <Github size={16} className="min-[1920px]:w-6 min-[1920px]:h-6" />
+                  <Github size={16} className="" />
                   {project.secondaryLinkText}
                 </a>
               )}

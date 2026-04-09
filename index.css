@@ -17,6 +17,15 @@
 }
 
 @layer base {
+  html {
+    @media (min-width: 1920px) {
+      font-size: 20px; /* Maps to 1.25x scaling across the whole site */
+    }
+    @media (min-width: 2560px) {
+      font-size: 24px; /* Maps to 1.5x scaling across the whole site */
+    }
+  }
+
   body {
     @apply bg-navy text-slate-200 overflow-x-hidden;
     font-family: var(--font-sans);

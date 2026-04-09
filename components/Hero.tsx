@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 px-6 max-w-7xl 2xl:max-w-[1600px] min-[1920px]:max-w-[1800px] mx-auto z-10">
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 px-6 max-w-7xl mx-auto z-10">
       <div className="grid md:grid-cols-2 gap-12 items-center w-full">
 
         {/* Text Content */}
@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl 2xl:text-7xl min-[1920px]:text-[80px] font-bold leading-tight text-white"
+            className="text-4xl md:text-6xl font-bold leading-tight text-white"
           >
             {HERO_CONTENT.headline}
           </motion.h1>
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg 2xl:text-xl min-[1920px]:text-2xl text-gray-400 max-w-xl min-[1920px]:max-w-3xl leading-relaxed"
+            className="text-lg text-gray-400 max-w-xl leading-relaxed"
           >
             {HERO_CONTENT.subHeadline}
           </motion.p>
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           <div className="absolute w-96 h-96 rounded-full border border-maroon/20"></div>
 
           {/* Image Container */}
-          <div className="w-64 h-80 2xl:w-72 2xl:h-96 min-[1920px]:w-80 min-[1920px]:h-[28rem] bg-navy-light rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+          <div className="w-64 h-80 bg-navy-light rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
             <img
               src="/ProfilePic.jpg"
               alt="Felix Eden"
