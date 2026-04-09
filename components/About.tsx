@@ -35,17 +35,10 @@ const About: React.FC = () => {
         >
           {/* Header */}
           <div style={{ marginBottom: '2.5rem' }}>
-            <p style={{
-              fontSize: '12px',
-              fontWeight: 500,
-              letterSpacing: '3px',
-              textTransform: 'uppercase',
-              color: 'var(--color-maroon)',
-              marginBottom: '0.75rem',
-              fontFamily: "'DM Sans', sans-serif",
-            }}>
-              01. Profil
-            </p>
+            <div className="flex items-center gap-4 mb-3">
+              <div className="h-px bg-maroon w-12"></div>
+              <h2 className="text-sm font-bold uppercase tracking-widest text-maroon">01. Profil</h2>
+            </div>
             <h3 style={{
               fontFamily: "'Playfair Display', serif",
               fontSize: '42px',
