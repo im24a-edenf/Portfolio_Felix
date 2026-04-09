@@ -26,7 +26,7 @@ const About: React.FC = () => {
       />
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl 2xl:max-w-[1600px] min-[1920px]:max-w-[1800px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const About: React.FC = () => {
               <h2 className="text-sm font-bold uppercase tracking-widest text-maroon">01. Profil</h2>
             </div>
             <h3
-              className="text-3xl md:text-[42px] font-medium leading-tight text-slate-100"
+              className="text-3xl md:text-[42px] min-[1920px]:text-6xl font-medium leading-tight text-slate-100"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Über <em style={{ color: 'var(--color-maroon)' }}>mich</em>
@@ -53,7 +53,7 @@ const About: React.FC = () => {
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             {/* Left — bio text */}
-            <div className="space-y-5 text-[15px] leading-[1.8] text-slate-400">
+            <div className="space-y-5 text-[15px] 2xl:text-base min-[1920px]:text-[18px] leading-[1.8] text-slate-400">
               <p>
                 Hallo, ich bin <span className="text-slate-100 font-medium">Felix</span>. Aktuell besuche ich das zweite Jahr der Informatikmittelschule an der Kantonsschule Hottingen. Mich fasziniert die Möglichkeit, komplexe Probleme durch logisches Denken und Code zu lösen.
               </p>

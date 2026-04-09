@@ -107,7 +107,7 @@ const Skills: React.FC = () => {
             ? "w-full flex flex-col gap-10 max-w-lg mx-auto"
             : "sticky top-0 h-screen w-full overflow-hidden flex flex-col pt-[110px] pb-8 px-4 md:px-8"
         }>
-          <div className={isMobile ? "" : "shrink-0 mb-4 max-w-6xl mx-auto w-full"}>
+          <div className={isMobile ? "" : "shrink-0 mb-4 max-w-6xl 2xl:max-w-7xl min-[1920px]:max-w-[1500px] mx-auto w-full"}>
             <div className="flex items-center gap-3 mb-2">
               <div className="h-px bg-maroon w-8 md:w-12"></div>
               <h2 className="text-xs md:text-xs font-bold uppercase tracking-widest text-maroon">02. Skills</h2>
@@ -117,7 +117,7 @@ const Skills: React.FC = () => {
 
           <div className={isMobile
               ? "flex flex-col gap-6"
-              : "flex-grow min-h-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 pb-2 max-w-6xl mx-auto w-full"
+              : "flex-grow min-h-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 pb-2 max-w-6xl 2xl:max-w-7xl min-[1920px]:max-w-[1500px] mx-auto w-full"
           }>
             <motion.div {...getMotionProps({ x: x1, opacity: o1 }, 0)} className="lg:col-span-7 bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl md:rounded-xl p-6 md:p-4 hover:border-maroon/30 transition-colors shadow-lg flex flex-col justify-center">
               <h4 className="text-xl md:text-base font-bold text-white mb-4 md:mb-3">{SKILL_DATA.frontend.title}</h4>

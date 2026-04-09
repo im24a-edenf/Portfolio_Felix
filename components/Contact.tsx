@@ -12,16 +12,16 @@ const Contact: React.FC = () => {
           <path d="M0,40 C360,0 1080,0 1440,40 L1440,40 L0,40 Z" fill="#020617" />
         </svg>
       </div>
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl 2xl:max-w-5xl min-[1920px]:max-w-6xl mx-auto text-center">
         <div className="flex items-center justify-center gap-4 mb-4">
           <div className="h-px bg-maroon w-12"></div>
           <h2 className="text-sm font-bold uppercase tracking-widest text-maroon">04. Kontakt</h2>
           <div className="h-px bg-maroon w-12"></div>
         </div>
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-5xl min-[1920px]:text-6xl font-bold text-white mb-6">
           {CONTACT_CONTENT.title}
         </h2>
-        <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+        <p className="text-gray-400 text-lg min-[1920px]:text-xl mb-12 max-w-2xl min-[1920px]:max-w-4xl mx-auto">
           {CONTACT_CONTENT.text}
         </p>
 

@@ -27,7 +27,7 @@ const Navigation: React.FC = () => {
             className={`fixed z-50 transition-all duration-500 ease-in-out left-1/2 -translate-x-1/2
           ${scrolled
                 ? 'top-4 w-[90%] md:w-auto md:min-w-[600px] rounded-full bg-navy/80 backdrop-blur-xl border border-glass-border shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-3 px-6'
-                : 'top-6 w-[95%] md:w-full max-w-7xl bg-transparent border-transparent py-4 px-6'
+                : 'top-6 w-[95%] md:w-full max-w-7xl 2xl:max-w-[1600px] min-[1920px]:max-w-[1800px] bg-transparent border-transparent py-4 px-6'
             }`}
         >
           <div className="flex justify-between items-center w-full">

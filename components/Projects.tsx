@@ -20,7 +20,7 @@ const techIcons: Record<string, React.ReactNode> = {
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="relative py-24 px-6 max-w-7xl mx-auto z-10">
+    <section id="projects" className="relative py-24 px-6 max-w-7xl 2xl:max-w-[1600px] min-[1920px]:max-w-[1800px] mx-auto z-10">
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-4">
           <div className="h-px bg-maroon w-12"></div>
