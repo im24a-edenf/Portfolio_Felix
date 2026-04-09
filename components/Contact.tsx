@@ -25,39 +25,39 @@ const Contact: React.FC = () => {
           {CONTACT_CONTENT.text}
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 min-[1920px]:gap-10 mb-16 min-[1920px]:mb-24">
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
-            className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-maroon hover:border-maroon transition-all group"
+            className="w-16 h-16 min-[1920px]:w-24 min-[1920px]:h-24 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-maroon hover:border-maroon transition-all group"
             aria-label="Email"
           >
-            <Mail className="group-hover:scale-110 transition-transform" />
+            <Mail className="group-hover:scale-110 transition-transform min-[1920px]:w-10 min-[1920px]:h-10" />
           </a>
           <a
             href={PERSONAL_INFO.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all group"
+            className="w-16 h-16 min-[1920px]:w-24 min-[1920px]:h-24 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all group"
             aria-label="LinkedIn"
           >
-            <FaLinkedin className="group-hover:scale-110 transition-transform" />
+            <FaLinkedin className="group-hover:scale-110 transition-transform min-[1920px]:w-10 min-[1920px]:h-10" />
           </a>
           <a
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-black hover:border-white transition-all group"
+            className="w-16 h-16 min-[1920px]:w-24 min-[1920px]:h-24 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-black hover:border-white transition-all group"
             aria-label="GitHub"
           >
-            <FaGithub className="group-hover:scale-110 transition-transform" />
+            <FaGithub className="group-hover:scale-110 transition-transform min-[1920px]:w-10 min-[1920px]:h-10" />
           </a>
           <a
             href="/Felix_Lebenslauf.pdf"
             download
-            className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-green-600 hover:border-green-600 transition-all group"
+            className="w-16 h-16 min-[1920px]:w-24 min-[1920px]:h-24 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-green-600 hover:border-green-600 transition-all group"
             aria-label="Lebenslauf herunterladen"
           >
-            <FileText className="group-hover:scale-110 transition-transform" />
+            <FileText className="group-hover:scale-110 transition-transform min-[1920px]:w-10 min-[1920px]:h-10" />
           </a>
         </div>
 

@@ -120,32 +120,32 @@ const Skills: React.FC = () => {
               : "flex-grow min-h-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 pb-2 max-w-6xl 2xl:max-w-7xl min-[1920px]:max-w-[1500px] mx-auto w-full"
           }>
             <motion.div {...getMotionProps({ x: x1, opacity: o1 }, 0)} className="lg:col-span-7 bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl md:rounded-xl p-6 md:p-4 hover:border-maroon/30 transition-colors shadow-lg flex flex-col justify-center">
-              <h4 className="text-xl md:text-base font-bold text-white mb-4 md:mb-3">{SKILL_DATA.frontend.title}</h4>
+              <h4 className="text-xl md:text-base min-[1920px]:text-2xl font-bold text-white mb-4 md:mb-3">{SKILL_DATA.frontend.title}</h4>
               <SkillTagGroup skills={SKILL_DATA.frontend.skills as TechSkill[]} />
             </motion.div>
 
             <motion.div {...getMotionProps({ x: x2, opacity: o2 }, 1)} className="lg:col-span-5 bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl md:rounded-xl p-6 md:p-4 hover:border-maroon/30 transition-colors shadow-lg flex flex-col justify-center">
-              <h4 className="text-xl md:text-base font-bold text-white mb-4 md:mb-3">{SKILL_DATA.backend.title}</h4>
+              <h4 className="text-xl md:text-base min-[1920px]:text-2xl font-bold text-white mb-4 md:mb-3">{SKILL_DATA.backend.title}</h4>
               <SkillTagGroup skills={SKILL_DATA.backend.skills as TechSkill[]} />
             </motion.div>
 
             <motion.div {...getMotionProps({ x: x3, opacity: o3 }, 2)} className="lg:col-span-4 bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl md:rounded-xl p-6 md:p-4 hover:border-maroon/30 transition-colors shadow-lg flex flex-col justify-center">
-              <h4 className="text-xl md:text-sm font-bold text-white mb-4 md:mb-3">{SKILL_DATA.database.title}</h4>
+              <h4 className="text-xl md:text-sm min-[1920px]:text-2xl font-bold text-white mb-4 md:mb-3">{SKILL_DATA.database.title}</h4>
               <SkillTagGroup skills={SKILL_DATA.database.skills as TechSkill[]} />
             </motion.div>
 
             <motion.div {...getMotionProps({ x: x4, opacity: o4 }, 3)} className="lg:col-span-5 bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl md:rounded-xl p-6 md:p-4 hover:border-maroon/30 transition-colors shadow-lg flex flex-col justify-center">
-              <h4 className="text-xl md:text-sm font-bold text-white mb-4 md:mb-3">{SKILL_DATA.tools.title}</h4>
+              <h4 className="text-xl md:text-sm min-[1920px]:text-2xl font-bold text-white mb-4 md:mb-3">{SKILL_DATA.tools.title}</h4>
               <SkillTagGroup skills={SKILL_DATA.tools.skills as TechSkill[]} />
             </motion.div>
 
             <motion.div {...getMotionProps({ x: x5, opacity: o5 }, 4)} className="lg:col-span-3 bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl md:rounded-xl p-6 md:p-4 hover:border-maroon/30 transition-colors shadow-lg flex flex-col justify-center">
-              <h4 className="text-xl md:text-sm font-bold text-white mb-4 md:mb-3">{SKILL_DATA.soft.title}</h4>
+              <h4 className="text-xl md:text-sm min-[1920px]:text-2xl font-bold text-white mb-4 md:mb-3">{SKILL_DATA.soft.title}</h4>
               <ul className="space-y-3 md:space-y-2">
                 {(SKILL_DATA.soft.skills as string[]).map((skill) => (
                     <li key={skill} className="flex items-start gap-3 md:gap-2 group">
-                      <CheckCircle2 size={18} className="text-maroon mt-0.5 shrink-0 group-hover:text-white transition-colors" />
-                      <span className="text-gray-300 text-base md:text-xs font-medium leading-snug">{skill}</span>
+                      <CheckCircle2 size={18} className="text-maroon mt-0.5 shrink-0 group-hover:text-white transition-colors min-[1920px]:w-6 min-[1920px]:h-6" />
+                      <span className="text-gray-300 text-base md:text-xs min-[1920px]:text-xl font-medium leading-snug">{skill}</span>
                     </li>
                 ))}
               </ul>
@@ -193,10 +193,10 @@ const SkillTagGroup: React.FC<{ skills: TechSkill[] }> = ({ skills }) => {
         if (group.length === 0) return null;
         return (
           <div key={level} className="flex flex-wrap items-center gap-2">
-            <span className="text-[10px] uppercase tracking-widest text-gray-500 w-full">{level}</span>
+            <span className="text-[10px] min-[1920px]:text-base uppercase tracking-widest text-gray-500 w-full">{level}</span>
             {group.map(skill => (
-              <span key={skill.name} className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${proficiencyStyles[level]}`}>
-                {skillIcons[skill.name] && <span className="text-[12px] leading-none">{skillIcons[skill.name]}</span>}
+              <span key={skill.name} className={`flex items-center gap-1.5 px-3 min-[1920px]:px-5 py-1 min-[1920px]:py-2 min-[1920px]:gap-3 rounded-full text-xs min-[1920px]:text-[17px] font-medium border ${proficiencyStyles[level]}`}>
+                {skillIcons[skill.name] && <span className="text-[12px] min-[1920px]:text-xl leading-none flex items-center justify-center">{skillIcons[skill.name]}</span>}
                 {skill.name}
               </span>
             ))}
@@ -206,8 +206,8 @@ const SkillTagGroup: React.FC<{ skills: TechSkill[] }> = ({ skills }) => {
       {tagged.length > 0 && (
         <div className="flex flex-wrap gap-2 pt-1">
           {tagged.map(skill => (
-            <span key={skill.name} className="flex items-center gap-1.5 px-3 py-1 bg-navy-dark border border-white/10 rounded-full text-xs font-medium text-gray-300">
-              {skillIcons[skill.name] && <span className="text-[12px] leading-none">{skillIcons[skill.name]}</span>}
+            <span key={skill.name} className="flex items-center gap-1.5 px-3 min-[1920px]:px-5 py-1 min-[1920px]:py-2 min-[1920px]:gap-3 bg-navy-dark border border-white/10 rounded-full text-xs min-[1920px]:text-[17px] font-medium text-gray-300">
+              {skillIcons[skill.name] && <span className="text-[12px] min-[1920px]:text-xl leading-none flex items-center justify-center">{skillIcons[skill.name]}</span>}
               {skill.name}
             </span>
           ))}
