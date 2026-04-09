@@ -1,121 +1,121 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Code2, Users } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="relative py-24 px-6 max-w-7xl mx-auto z-10">
+    <section id="about" className="relative z-10 pt-24 pb-48 w-full">
 
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-12"
-      >
-        <div className="flex items-center gap-4 mb-4">
-          <div className="h-px bg-maroon w-12"></div>
-          <h2 className="text-sm font-bold uppercase tracking-widest text-maroon">01. Profil</h2>
-        </div>
-        <h3 className="text-4xl font-bold text-white">
-          Über <span className="text-maroon">mich</span>
-        </h3>
-      </motion.div>
+      {/* Full-bleed blurred background — solid over content, fades to transparent at screen edges */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backdropFilter: 'blur(14px)',
+        WebkitBackdropFilter: 'blur(14px)',
+        background: 'rgba(15, 23, 42, 0.6)',
+        maskImage: [
+          'linear-gradient(to right,  transparent 0px, black 100px, black calc(100% - 100px), transparent 100%)',
+          'linear-gradient(to bottom, transparent 0px, black 160px, black calc(100% - 160px), transparent 100%)',
+        ].join(', '),
+        WebkitMaskImage: [
+          'linear-gradient(to right,  transparent 0px, black 100px, black calc(100% - 100px), transparent 100%)',
+          'linear-gradient(to bottom, transparent 0px, black 160px, black calc(100% - 160px), transparent 100%)',
+        ].join(', '),
+        maskComposite: 'intersect',
+        WebkitMaskComposite: 'source-in',
+        pointerEvents: 'none',
+      }} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-        {/* Left Column: Main Text (Takes up ~66% width on large screens) */}
+      {/* Content — max-width constrained */}
+      <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="lg:col-span-2 bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl p-8 shadow-lg"
+          transition={{ duration: 0.6 }}
         >
-          <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed">
-            <p>
-              Hallo, ich bin <span className="text-white font-medium">Felix</span>. Aktuell besuche ich das zweite Jahr der Informatikmittelschule an der Kantonsschule Hottingen. Mich fasziniert die Möglichkeit, komplexe Probleme durch logisches Denken und Code zu lösen.
+          {/* Header */}
+          <div style={{ marginBottom: '2.5rem' }}>
+            <p style={{
+              fontSize: '12px',
+              fontWeight: 500,
+              letterSpacing: '3px',
+              textTransform: 'uppercase',
+              color: 'var(--color-maroon)',
+              marginBottom: '0.75rem',
+              fontFamily: "'DM Sans', sans-serif",
+            }}>
+              01. Profil
             </p>
-            <p>
-              In der Schule und in meiner Freizeit baue ich mein Wissen in Python und Web-Technologien stetig aus. Dabei ist mir nicht nur wichtig, dass der Code funktioniert, sondern auch wie er strukturiert ist.
-            </p>
-            <p>
-              Warum ich der richtige Praktikant für Ihr Team bin? Ich bringe eine schnelle Auffassungsgabe mit und habe große Lust, Neues zu lernen. Pünktlichkeit, Pflichtbewusstsein und offene Kommunikation sind für mich dabei keine leeren Worte, sondern die Basis für eine gute Zusammenarbeit im Team.
-            </p>
+            <h3 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: '42px',
+              fontWeight: 500,
+              lineHeight: 1.1,
+              color: '#f1f5f9',
+            }}>
+              Über <em style={{ color: 'var(--color-maroon)', fontStyle: 'italic' }}>mich</em>
+            </h3>
+          </div>
+
+          {/* Three-column grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '3fr 1px 2fr',
+            gap: '4rem',
+            alignItems: 'start',
+            fontFamily: "'DM Sans', sans-serif",
+          }}>
+
+            {/* Left — bio text */}
+            <div>
+              <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#94a3b8', margin: 0 }}>
+                Hallo, ich bin <span style={{ color: '#f1f5f9', fontWeight: 500 }}>Felix</span>. Aktuell besuche ich das zweite Jahr der Informatikmittelschule an der Kantonsschule Hottingen. Mich fasziniert die Möglichkeit, komplexe Probleme durch logisches Denken und Code zu lösen.
+              </p>
+              <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#94a3b8', marginTop: '1.25rem' }}>
+                In der Schule und in meiner Freizeit baue ich mein Wissen in Python und Web-Technologien stetig aus. Dabei ist mir nicht nur wichtig, dass der Code funktioniert, sondern auch wie er strukturiert ist.
+              </p>
+              <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#94a3b8', marginTop: '1.25rem' }}>
+                Warum ich der richtige Praktikant für Ihr Team bin? Ich bringe eine schnelle Auffassungsgabe mit und habe große Lust, Neues zu lernen. Pünktlichkeit, Pflichtbewusstsein und offene Kommunikation sind für mich dabei keine leeren Worte, sondern die Basis für eine gute Zusammenarbeit im Team.
+              </p>
+            </div>
+
+            {/* Middle — vertical divider */}
+            <div style={{
+              width: '1px',
+              backgroundColor: 'rgba(225, 29, 72, 0.3)',
+              alignSelf: 'stretch',
+            }} />
+
+            {/* Right — info groups */}
+            <div style={{ paddingTop: '0.25rem' }}>
+
+              <div style={{ marginBottom: '2rem' }}>
+                <p style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#64748b', marginBottom: '6px' }}>Ausbildung</p>
+                <p style={{ fontSize: '15px', fontWeight: 500, color: '#f1f5f9', lineHeight: 1.5, margin: 0 }}>Informatikmittelschule, 2. Jahr</p>
+                <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>Kantonsschule Hottingen</p>
+              </div>
+
+              <div style={{ height: '1px', backgroundColor: 'rgba(225, 29, 72, 0.3)', marginBottom: '2rem' }} />
+
+              <div style={{ marginBottom: '2rem' }}>
+                <p style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#64748b', marginBottom: '6px' }}>Fokus</p>
+                <p style={{ fontSize: '15px', fontWeight: 500, color: '#f1f5f9', lineHeight: 1.5, margin: 0 }}>Python & SQL für Backend/Daten</p>
+                <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>Modernes Frontend mit React & Tailwind</p>
+              </div>
+
+              <div style={{ height: '1px', backgroundColor: 'rgba(225, 29, 72, 0.3)', marginBottom: '2rem' }} />
+
+              <div>
+                <p style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#64748b', marginBottom: '6px' }}>Team-Player</p>
+                <p style={{ fontSize: '15px', fontWeight: 500, color: '#f1f5f9', lineHeight: 1.5, margin: 0 }}>Pünktlich, pflichtbewusst & kommunikativ</p>
+                <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>Grundkenntnisse in Scrum & Git</p>
+              </div>
+
+            </div>
           </div>
         </motion.div>
-
-        {/* Right Column: Feature Cards Stack (Takes up ~33% width) */}
-        <div className="lg:col-span-1 flex flex-col gap-4">
-
-          {/* Card 1: Ausbildung */}
-          <HighlightCard
-            icon={<GraduationCap size={28} />}
-            title="Ausbildung"
-            delay={0.1}
-          >
-            <div className="flex flex-col">
-              <span>Informatikmittelschule, 2. Jahr</span>
-              <span className="text-gray-400 text-sm mt-1">Kantonsschule Hottingen</span>
-            </div>
-          </HighlightCard>
-
-          {/* Card 2: Fokus */}
-          <HighlightCard
-            icon={<Code2 size={28} />}
-            title="Fokus"
-            delay={0.2}
-          >
-            <div className="flex flex-col gap-1">
-              <span>Python & SQL für Backend/Daten</span>
-              <span className="text-gray-400 text-sm">Modernes Frontend mit React & Tailwind</span>
-            </div>
-          </HighlightCard>
-
-          {/* Card 3: Team-Player */}
-          <HighlightCard
-            icon={<Users size={28} />}
-            title="Team-Player"
-            delay={0.3}
-          >
-            <div className="flex flex-col gap-1">
-              <span>Pünktlich, pflichtbewusst & kommunikativ</span>
-              <span className="text-gray-400 text-sm">Grundkenntnisse in Scrum & Git</span>
-            </div>
-          </HighlightCard>
-
-        </div>
       </div>
     </section>
-  );
-};
-
-// Reusable Highlight Card Component
-const HighlightCard: React.FC<{
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-  delay: number;
-}> = ({ icon, title, children, delay }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="bg-navy-light/40 backdrop-blur-md border border-white/5 rounded-2xl p-6 flex items-start gap-4 hover:border-maroon/30 transition-colors shadow-lg h-full"
-    >
-      <div className="shrink-0 text-maroon p-3 bg-maroon/10 rounded-xl">
-        {icon}
-      </div>
-      <div>
-        <h4 className="text-white font-bold text-lg mb-2">{title}</h4>
-        <div className="text-gray-300 text-sm leading-snug">
-          {children}
-        </div>
-      </div>
-    </motion.div>
   );
 };
 
