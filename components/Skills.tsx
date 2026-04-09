@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { SKILL_DATA } from '../constants';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Database, GitBranch, Monitor, Bot, RefreshCw } from 'lucide-react';
 import { ProficiencyLevel } from '../types';
+import { SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiPython, SiNodedotjs, SiGit, SiJetbrains, SiGithub } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 
 interface TechSkill {
   name: string;
@@ -160,6 +162,24 @@ const Skills: React.FC = () => {
   );
 };
 
+const skillIcons: Record<string, React.ReactNode> = {
+  'HTML5':               <SiHtml5 />,
+  'CSS3':                <SiCss />,
+  'JavaScript (ES6+)':  <SiJavascript />,
+  'React':               <SiReact />,
+  'Next.js':             <SiNextdotjs />,
+  'Python':              <SiPython />,
+  'Java':                <FaJava />,
+  'Node.js':             <SiNodedotjs />,
+  'SQL':                 <Database size={12} />,
+  'Data Modelling':      <GitBranch size={12} />,
+  'Scrum':               <RefreshCw size={12} />,
+  'Responsive Design':   <Monitor size={12} />,
+  'AI-Assisted Coding':  <Bot size={12} />,
+  'JetBrains Tools':     <SiJetbrains />,
+  'Git / GitHub':        <SiGit />,
+};
+
 const proficiencyStyles: Record<ProficiencyLevel, string> = {
   Expert: 'bg-maroon text-white border-maroon',
   Proficient: 'bg-transparent text-slate-200 border-maroon/50',
@@ -181,7 +201,8 @@ const SkillTagGroup: React.FC<{ skills: TechSkill[] }> = ({ skills }) => {
           <div key={level} className="flex flex-wrap items-center gap-2">
             <span className="text-[10px] uppercase tracking-widest text-gray-500 w-full">{level}</span>
             {group.map(skill => (
-              <span key={skill.name} className={`px-3 py-1 rounded-full text-xs font-medium border ${proficiencyStyles[level]}`}>
+              <span key={skill.name} className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${proficiencyStyles[level]}`}>
+                {skillIcons[skill.name] && <span className="text-[12px] leading-none">{skillIcons[skill.name]}</span>}
                 {skill.name}
               </span>
             ))}
@@ -191,7 +212,8 @@ const SkillTagGroup: React.FC<{ skills: TechSkill[] }> = ({ skills }) => {
       {tagged.length > 0 && (
         <div className="flex flex-wrap gap-2 pt-1">
           {tagged.map(skill => (
-            <span key={skill.name} className="px-3 py-1 bg-navy-dark border border-white/10 rounded-full text-xs font-medium text-gray-300">
+            <span key={skill.name} className="flex items-center gap-1.5 px-3 py-1 bg-navy-dark border border-white/10 rounded-full text-xs font-medium text-gray-300">
+              {skillIcons[skill.name] && <span className="text-[12px] leading-none">{skillIcons[skill.name]}</span>}
               {skill.name}
             </span>
           ))}

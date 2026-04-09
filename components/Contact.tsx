@@ -1,10 +1,17 @@
 import React from 'react';
 import { CONTACT_CONTENT, PERSONAL_INFO } from '../constants';
-import { Mail, Github, Linkedin, FileText } from 'lucide-react';
+import { Mail, FileText } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   return (
-    <footer id="contact" className="relative bg-navy-dark border-t border-white/5 pt-24 pb-12 px-6 z-10">
+    <footer id="contact" className="relative bg-navy-dark pt-24 pb-12 px-6 z-10">
+      {/* Curved top edge */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-full pointer-events-none">
+        <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="w-full h-10 block" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,0 1080,0 1440,40 L1440,40 L0,40 Z" fill="#020617" />
+        </svg>
+      </div>
       <div className="max-w-4xl mx-auto text-center">
         <div className="flex items-center justify-center gap-4 mb-4">
           <div className="h-px bg-maroon w-12"></div>
@@ -28,24 +35,30 @@ const Contact: React.FC = () => {
           </a>
           <a
             href={PERSONAL_INFO.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all group"
             aria-label="LinkedIn"
           >
-            <Linkedin className="group-hover:scale-110 transition-transform" />
+            <FaLinkedin className="group-hover:scale-110 transition-transform" />
           </a>
           <a
             href={PERSONAL_INFO.github}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-black hover:border-white transition-all group"
             aria-label="GitHub"
           >
-            <Github className="group-hover:scale-110 transition-transform" />
+            <FaGithub className="group-hover:scale-110 transition-transform" />
           </a>
-          <button
+          <a
+            href="/Felix_Lebenslauf.pdf"
+            download
             className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-green-600 hover:border-green-600 transition-all group"
-            aria-label="Resume"
+            aria-label="Lebenslauf herunterladen"
           >
             <FileText className="group-hover:scale-110 transition-transform" />
-          </button>
+          </a>
         </div>
 
         <div className="text-gray-600 text-sm font-mono border-t border-white/5 pt-8">

@@ -10,6 +10,8 @@ export interface Project {
   status: 'Completed' | 'Work in Progress';
   link?: string;
   linkText: string;
+  secondaryLink?: string;
+  secondaryLinkText?: string;
 }
 
 export interface ContentSection {

@@ -1,7 +1,22 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Bot, Zap, Code } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SiReact, SiTypescript, SiThreedotjs, SiTailwindcss, SiPython, SiFlask, SiGit } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
+
+const techIcons: Record<string, React.ReactNode> = {
+  'React':        <SiReact />,
+  'TypeScript':   <SiTypescript />,
+  'Three.js':     <SiThreedotjs />,
+  'Tailwind CSS': <SiTailwindcss />,
+  'Python':       <SiPython />,
+  'Flask':        <SiFlask />,
+  'Java':         <FaJava />,
+  'AI / LLM':     <Bot size={12} />,
+  'WebSockets':   <Zap size={12} />,
+  'Luau':         <Code size={12} />,
+};
 
 const Projects: React.FC = () => {
   return (
@@ -36,20 +51,35 @@ const Projects: React.FC = () => {
 
             <div className="flex flex-wrap gap-2 mb-8">
               {project.techStack.map(tech => (
-                <span key={tech} className="text-xs font-mono text-gray-300 bg-navy-dark px-2 py-1 rounded">
+                <span key={tech} className="flex items-center gap-1.5 text-xs font-mono text-gray-300 bg-navy-dark px-2 py-1 rounded">
+                  {techIcons[tech] && <span className="text-[12px] leading-none">{techIcons[tech]}</span>}
                   {tech}
                 </span>
               ))}
             </div>
 
-            <a
-              href={project.link}
-              className={`flex items-center gap-2 text-sm font-semibold transition-colors ${project.status === 'Completed' ? 'text-white hover:text-maroon' : 'text-gray-500 cursor-not-allowed'
-                }`}
-            >
-              {project.status === 'Completed' && <Github size={16} />}
-              {project.linkText}
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href={project.link}
+                target={project.link ? '_blank' : undefined}
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 text-sm font-semibold transition-colors ${project.link ? 'text-white hover:text-maroon' : 'text-gray-500 cursor-not-allowed pointer-events-none'}`}
+              >
+                {project.link && <Github size={16} />}
+                {project.linkText}
+              </a>
+              {project.secondaryLink && (
+                <a
+                  href={project.secondaryLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-semibold text-white hover:text-maroon transition-colors"
+                >
+                  <Github size={16} />
+                  {project.secondaryLinkText}
+                </a>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>

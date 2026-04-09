@@ -3,9 +3,9 @@ import { NavItem, Project, SkillData, ProficiencyLevel } from './types';
 export const PERSONAL_INFO = {
   name: "Felix Eden",
   role: "Angehender Software-Entwickler & IMS-Schüler",
-  email: "felix.eden@beispiel.ch", // Placeholder
-  linkedin: "#",
-  github: "#"
+  email: "felix@gilen.ch",
+  linkedin: "https://www.linkedin.com",
+  github: "https://github.com/im24a-edenf"
 };
 
 export const NAV_ITEMS: NavItem[] = [
@@ -26,7 +26,7 @@ export const ABOUT_CONTENT = {
   paragraphs: [
     "Hallo, ich bin Felix Eden. Aktuell besuche ich das zweite Jahr der Informatikmittelschule an der Kantonsschule Hottingen. Mich fasziniert die Möglichkeit, komplexe Probleme durch logisches Denken und Code zu lösen.",
     "In der Schule und in meiner Freizeit baue ich mein Wissen in Python und Web-Technologien stetig aus. Dabei ist mir nicht nur wichtig, dass der Code funktioniert, sondern auch wie er strukturiert ist.",
-    "Warum ich der richtige Praktikant für Ihr Team bin? Ich bringe eine schnelle Auffassungsgabe mit und habe große Lust, Neues zu lernen. Pünktlichkeit, Pflichtbewusstsein und offene Kommunikation sind für mich dabei keine leeren Worte, sondern die Basis für eine gute Zusammenarbeit im Team."
+    "Warum ich der richtige Praktikant für Ihr Team bin? Ich bringe eine schnelle Auffassungsgabe mit und habe grosse Lust, Neues zu lernen. Pünktlichkeit, Pflichtbewusstsein und offene Kommunikation sind für mich dabei keine leeren Worte, sondern die Basis für eine gute Zusammenarbeit im Team."
   ]
 };
 
@@ -96,14 +96,25 @@ export const PROJECTS: Project[] = [
     techStack: ["React", "TypeScript", "Three.js", "Tailwind CSS"],
     status: "Completed",
     linkText: "Code auf GitHub ansehen",
-    link: "#"
+    link: "https://github.com/im24a-edenf/Portfolio_Felix"
   },
   {
-    title: "Python Data Tool",
-    description: "Aktuell arbeite ich an einer Python-Applikation zur Datenverarbeitung, um meine SQL-Kenntnisse mit Anwendungslogik zu verknüpfen.",
-    techStack: ["Python", "SQL", "Pandas"],
+    title: "Roblox Studio AI Co-Pilot",
+    description: "Roblox Studio ist die Entwicklungsumgebung für das Spieleentwicklungs-Ökosystem Roblox. Dieses Tool ist ein KI-gestützter Assistent, der per Chat live in Roblox Studio arbeitet: 3D-Umgebungen erstellen, Skripte generieren und Spielsysteme aufbauen — alles in Echtzeit.",
+    techStack: ["Python", "Flask", "React", "AI / LLM", "Luau"],
     status: "Work in Progress",
-    linkText: "Coming Soon"
+    linkText: "Code auf GitHub ansehen",
+    link: "https://github.com/im24a-edenf/Roblox_Ai_connect"
+  },
+  {
+    title: "Schiffe Versenken",
+    description: "Ein browserbasiertes Schiffe-Versenken-Spiel mit zwei Modi: Einzelspieler gegen einen Bot sowie ein Echtzeit-Multiplayer-Modus.",
+    techStack: ["React", "Java", "WebSockets"],
+    status: "Work in Progress",
+    linkText: "Frontend",
+    link: "https://github.com/im24a-voegelie/Schiffeversenken-Frontend",
+    secondaryLink: "https://github.com/im24a-voegelie/Schiffeversenken-Backend",
+    secondaryLinkText: "Backend"
   }
 ];
 

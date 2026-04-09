@@ -1,6 +1,6 @@
 import React from 'react';
 import { HERO_CONTENT, PERSONAL_INFO } from '../constants';
-import { ArrowRight, Download, ChevronDown } from 'lucide-react';
+import { ArrowDown, Download, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
@@ -41,12 +41,16 @@ const Hero: React.FC = () => {
               className="group flex items-center gap-2 bg-white text-navy px-6 py-3 rounded-full font-semibold transition-all hover:bg-gray-200"
             >
               Kontakt aufnehmen
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
             </a>
-            <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-3 rounded-full hover:bg-white/5 transition-all">
+            <a
+              href="/Felix_Lebenslauf.pdf"
+              download
+              className="flex items-center gap-2 border border-white/20 text-white px-6 py-3 rounded-full hover:bg-white/5 transition-all"
+            >
               <Download size={18} />
               Lebenslauf
-            </button>
+            </a>
           </motion.div>
         </div>
 
@@ -66,11 +70,11 @@ const Hero: React.FC = () => {
           {/* Image Container */}
           <div className="w-64 h-80 bg-navy-light rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
             <img
-              src="https://picsum.photos/400/500?grayscale"
+              src="/ProfilePic.jpg"
               alt="Felix Eden"
-              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
             {/* Name label overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-4">
               <p className="text-white font-semibold text-sm">{PERSONAL_INFO.name}</p>

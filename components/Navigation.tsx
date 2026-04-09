@@ -33,12 +33,9 @@ const Navigation: React.FC = () => {
         >
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-2">
-              <div className={`w-8 h-8 rounded-full border border-maroon flex items-center justify-center transition-colors ${scrolled ? 'bg-navy-dark' : 'bg-navy'}`}>
-                <span className="text-maroon font-bold text-xs">FE</span>
-              </div>
               <span className={`font-semibold tracking-wide text-lg transition-colors ${scrolled ? 'text-white' : 'text-slate-100'}`}>
-              {PERSONAL_INFO.name}
-            </span>
+                {PERSONAL_INFO.name}
+              </span>
             </div>
 
             {/* Desktop Links */}
