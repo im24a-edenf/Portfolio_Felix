@@ -1,11 +1,12 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import Background3D from './components/Background3D';
+
+const Background3D = lazy(() => import('./components/Background3D'));
 
 const App: React.FC = () => {
   return (

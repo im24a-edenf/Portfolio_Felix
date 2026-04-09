@@ -2,15 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import { SKILL_DATA } from '../constants';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { CheckCircle2, Database, GitBranch, Monitor, Bot, RefreshCw } from 'lucide-react';
-import { ProficiencyLevel } from '../types';
-import { SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiPython, SiNodedotjs, SiGit, SiJetbrains, SiGithub } from 'react-icons/si';
+import { ProficiencyLevel, TechSkill } from '../types';
+import { SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiPython, SiNodedotjs, SiGit, SiJetbrains } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
-
-interface TechSkill {
-  name: string;
-  proficiency?: ProficiencyLevel;
-  isTag?: boolean;
-}
 
 const Skills: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

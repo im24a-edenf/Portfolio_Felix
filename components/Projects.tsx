@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className="group relative bg-navy-light/20 backdrop-blur-md rounded-2xl p-8 border border-white/5 hover:border-maroon/40 hover:-translate-y-2 transition-all duration-300"
+            className="group relative bg-navy-light/20 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/5 hover:border-maroon/40 hover:-translate-y-2 transition-all duration-300"
           >
             <div className="absolute top-8 right-8 text-maroon opacity-50">
               {project.status === 'Completed' ? <ExternalLink size={24} /> : <div className="text-xs border border-maroon px-2 py-1 rounded">WIP</div>}

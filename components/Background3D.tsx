@@ -1,7 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Torus, Icosahedron, Octahedron, Float } from '@react-three/drei';
 import * as THREE from 'three';
+
+// Materials created once — reused every frame instead of reallocated
+const wireframeMaterial = new THREE.MeshBasicMaterial({
+  color: '#94A3B8',
+  wireframe: true,
+  transparent: true,
+  opacity: 0.3,
+});
+
+const accentMaterial = new THREE.MeshBasicMaterial({
+  color: '#E11D48',
+  wireframe: true,
+  transparent: true,
+  opacity: 0.6,
+});
 
 // Fix for missing R3F types in JSX.IntrinsicElements
 declare global {
@@ -30,12 +45,17 @@ const Mechanism: React.FC = () => {
   const ring3Ref = useRef<THREE.Mesh>(null);
   const coreRef = useRef<THREE.Mesh>(null);
   const floatingGeoRef = useRef<THREE.Group>(null);
+  const scrollYRef = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => { scrollYRef.current = window.scrollY; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    // Scroll interaction
-    const scrollY = window.scrollY;
-    const scrollProgress = scrollY * 0.0005;
+    const scrollProgress = scrollYRef.current * 0.0005;
 
     if (groupRef.current) {
       // General group rotation based on scroll
@@ -66,21 +86,6 @@ const Mechanism: React.FC = () => {
     if(floatingGeoRef.current) {
       floatingGeoRef.current.rotation.y = scrollProgress * 2;
     }
-  });
-
-  // Dominant Wireframe Material
-  const wireframeMaterial = new THREE.MeshBasicMaterial({
-    color: '#94A3B8', // Slate-400 - Lighter gray for better visibility on dark BG
-    wireframe: true,
-    transparent: true,
-    opacity: 0.3, 
-  });
-
-  const accentMaterial = new THREE.MeshBasicMaterial({
-    color: '#E11D48', // New Vibrant Maroon (Rose 600)
-    wireframe: true,
-    transparent: true,
-    opacity: 0.6,
   });
 
   return (
@@ -117,7 +122,7 @@ const Mechanism: React.FC = () => {
 const Background3D: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none opacity-80">
-      <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
+      <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 8], fov: 45 }}>
         {/* Updated Fog color to match new Navy #0F172A */}
         <fog attach="fog" args={['#0F172A', 5, 20]} />
         <ambientLight intensity={0.8} />

@@ -14,7 +14,6 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // NEW: Helper to ensure hashchange event fires even on double-clicks
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
     if (window.location.hash === href) {
@@ -45,8 +44,7 @@ const Navigation: React.FC = () => {
                     <a
                         key={item.label}
                         href={item.href}
-                        onClick={() => handleNavClick(item.href)} // Updated
-                        className="px-4 py-1.5 text-gray-300 hover:text-white text-sm font-medium hover:bg-white/10 rounded-full transition-all duration-200"
+                        onClick={() => handleNavClick(item.href)}                        className="px-4 py-1.5 text-gray-300 hover:text-white text-sm font-medium hover:bg-white/10 rounded-full transition-all duration-200"
                     >
                       {item.label}
                     </a>
@@ -57,14 +55,17 @@ const Navigation: React.FC = () => {
             <div className="hidden md:block">
               <a
                   href="#contact"
-                  onClick={() => handleNavClick("#contact")} // Updated
-                  className="bg-maroon hover:bg-maroon-glow text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-[0_0_15px_rgba(120,0,0,0.3)] hover:shadow-[0_0_25px_rgba(120,0,0,0.6)]"
+                  onClick={() => handleNavClick("#contact")}                  className="bg-maroon hover:bg-maroon-glow text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-[0_0_15px_rgba(120,0,0,0.3)] hover:shadow-[0_0_25px_rgba(120,0,0,0.6)]"
               >
                 Kontakt
               </a>
             </div>
 
-            <button className="md:hidden text-white p-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <button
+              className="md:hidden text-white p-1"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+            >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -77,16 +78,14 @@ const Navigation: React.FC = () => {
                   <a
                       key={item.label}
                       href={item.href}
-                      onClick={() => handleNavClick(item.href)} // Updated
-                      className="text-gray-200 text-2xl font-light hover:text-maroon transition-colors"
+                      onClick={() => handleNavClick(item.href)}                      className="text-gray-200 text-2xl font-light hover:text-maroon transition-colors"
                   >
                     {item.label}
                   </a>
               ))}
               <a
                   href="#contact"
-                  onClick={() => handleNavClick("#contact")} // Updated
-                  className="bg-maroon text-white text-center py-4 rounded-xl font-medium mt-4 text-lg"
+                  onClick={() => handleNavClick("#contact")}                  className="bg-maroon text-white text-center py-4 rounded-xl font-medium mt-4 text-lg"
               >
                 Kontakt
               </a>

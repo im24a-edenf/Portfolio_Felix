@@ -14,13 +14,7 @@ export interface Project {
   secondaryLinkText?: string;
 }
 
-export interface ContentSection {
-  title: string;
-  subtitle?: string;
-  content: string | string[];
-}
-
-// New Types for Bento Grid Layout
+// Skill & card types
 export type ProficiencyLevel = 'Expert' | 'Proficient' | 'Familiar';
 
 export interface TechSkill {

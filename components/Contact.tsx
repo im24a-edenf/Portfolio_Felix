@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
           {CONTACT_CONTENT.text}
         </p>
 
-        <div className="flex justify-center gap-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-16">
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
             className="w-16 h-16 rounded-full bg-navy-light border border-white/5 flex items-center justify-center text-white hover:bg-maroon hover:border-maroon transition-all group"

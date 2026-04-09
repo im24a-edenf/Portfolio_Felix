@@ -17,7 +17,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const HERO_CONTENT = {
   headline: "Angehender Software-Entwickler & IMS-Schüler",
-  subHeadline: "Fokus auf Python, Web-Development & sauberen Code. Auf der Suche nach einem spannenden Jahrespraktikum ab August 2025.",
+  subHeadline: "Fokus auf Python, Web-Development & sauberen Code. Auf der Suche nach einem spannenden Jahrespraktikum ab August 2026.",
   cta: "Zum Lebenslauf"
 };
 
