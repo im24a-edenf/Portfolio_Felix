@@ -110,9 +110,9 @@ export const PROJECTS: Project[] = [
     title: "Schiffe Versenken",
     description: "Ein browserbasiertes Schiffe-Versenken-Spiel mit zwei Modi: Einzelspieler gegen einen Bot sowie ein Echtzeit-Multiplayer-Modus.",
     techStack: ["React", "Java", "WebSockets"],
-    status: "Work in Progress",
-    linkText: "Frontend",
-    link: "https://github.com/im24a-voegelie/Schiffeversenken-Frontend",
+    status: "Completed",
+    linkText: "Spiel spielen",
+    link: "https://schiffe-versenken.felix-eden.ch",
     secondaryLink: "https://github.com/im24a-voegelie/Schiffeversenken-Backend",
     secondaryLinkText: "Backend"
   }
