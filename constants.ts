@@ -111,9 +111,10 @@ export const PROJECTS: Project[] = [
     description: "Ein browserbasiertes Schiffe-Versenken-Spiel mit zwei Modi: Einzelspieler gegen einen Bot sowie ein Echtzeit-Multiplayer-Modus.",
     techStack: ["React", "Java", "WebSockets"],
     status: "Completed",
-    linkText: "Spiel spielen",
-    link: "https://schiffe-versenken.felix-eden.ch",
-    secondaryLink: "https://github.com/im24a-voegelie/Schiffeversenken-Backend",
+    liveUrl: "https://schiffe-versenken.felix-eden.ch",
+    linkText: "Frontend",
+    link: "https://github.com/im24a-edenf/BattleShips_frontend",
+    secondaryLink: "https://github.com/im24a-edenf/BattleShips_backend",
     secondaryLinkText: "Backend"
   }
 ];

@@ -8,6 +8,7 @@ export interface Project {
   description: string;
   techStack: string[];
   status: 'Completed' | 'Work in Progress';
+  liveUrl?: string;
   link?: string;
   linkText: string;
   secondaryLink?: string;
