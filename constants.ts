@@ -4,7 +4,7 @@ export const PERSONAL_INFO = {
   name: "Felix Eden",
   role: "Angehender Software-Entwickler & IMS-Schüler",
   email: "felix@gilen.ch",
-  linkedin: "https://www.linkedin.com",
+  linkedin: "https://www.linkedin.com/in/felix-ed%C3%A9n-207867298/",
   github: "https://github.com/im24a-edenf"
 };
 
