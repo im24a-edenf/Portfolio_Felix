@@ -66,12 +66,12 @@ const Hero: React.FC = () => {
           <div className="absolute w-96 h-96 rounded-full border border-maroon/20"></div>
 
           {/* Image Container */}
-          <div className="w-64 h-80 bg-navy-light rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+          <div className="w-64 h-[360px] bg-navy-light rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
             <img
               src="/Portrait_Felix_Bild.png"
               alt="Felix Eden"
               width={256}
-              height={320}
+              height={360}
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover"
