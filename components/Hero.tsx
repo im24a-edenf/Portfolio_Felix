@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           {/* Image Container */}
           <div className="w-64 h-80 bg-navy-light rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
             <img
-              src="/ProfilePic.jpg"
+              src="/Portrait_Felix_Bild.png"
               alt="Felix Eden"
               width={256}
               height={320}
