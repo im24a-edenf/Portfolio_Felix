@@ -48,7 +48,7 @@ export const SKILL_DATA: SkillData = {
     title: 'Backend Development',
     type: 'technical',
     skills: [
-      { name: 'Python', proficiency: 'Expert' as ProficiencyLevel },
+      { name: 'Python', proficiency: 'Proficient' as ProficiencyLevel },
       { name: 'Java', proficiency: 'Familiar' as ProficiencyLevel },
       { name: 'Node.js', proficiency: 'Familiar' as ProficiencyLevel }
     ]
